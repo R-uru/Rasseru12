@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Color Picker</title>
+  </head>
+  <body>
+    <div class="container">
+        <h2>Pick some colors</h2>
+      <div class="wrapper">
+        <p id="first">Red</p><input type="range" min="0" max="255" value="0" id="red" oninput="colors()">
+      </div>
+      <div class="wrapper">
+        <p id="second">Green</p><input type="range" min="0" max="255" value="0" id="green" oninput="colors()">
+      </div>
+      <div class="wrapper">
+        <p id="third">Blue</p><input type="range" min="0" max="255" value="0" id="blue" oninput="colors()">
+      </div>
+      <span id="output">rgb(0,0,0)</span>
+    </div>
+    <a href="https://www.facebook.com/pengengjowalima" target="_blank">Facebook</a>
+    <script>
+    function colors() {
+    var red = document.getElementById("red").value;
+    // var first = document.getElementById("first");
+    var green = document.getElementById("green").value;
+    var blue = document.getElementById("blue").value;
+    document.body.style.backgroundColor = 'rgb('+red+','+green+','+blue+')';
+    document.getElementById("output").innerHTML = 'rgb('+red+','+green+','+blue+')';
+    document.getElementById("output").style.backgroundColor = 'rgb('+red+','+green+','+blue+')';
+    document.getElementById("first").innerHTML = 'Red '+red;
+    document.getElementById("first").style.color = 'rgb('+red+','+0+','+0+')';
+    document.getElementById("second").innerHTML = 'Green '+green;
+    document.getElementById("second").style.color = 'rgb('+0+','+green+','+0+')';
+    document.getElementById("third").innerHTML = 'Blue '+blue;
+    document.getElementById("third").style.color = 'rgb('+0+','+0+','+blue+')';
+    }
+    </script>
+  </body>
+</html>
